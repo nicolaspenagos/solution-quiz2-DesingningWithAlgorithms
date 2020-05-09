@@ -77,7 +77,7 @@ public class Square implements Runnable{
 		try {
 			while(!stop) {
 				Thread.sleep(1000);
-				simpleMove();
+				complexMove();
 			}	
 
 		} catch (InterruptedException e) {
@@ -106,35 +106,37 @@ public class Square implements Runnable{
 	 * To be used, the line 83 must be modified simpleMove() --> complexMove()
 	 */
 	public void complexMove() {
-		
-		if(position == MIDDLE) {
-			if(direction == GO_UP) {
-				posY += 20;
-				position = UP;
-			}else {
-				posY -= 20;
-				position = DOWN;
-			}
-			
+		if(!stop) {
 			if(position == MIDDLE) {
-				if(direction == GO_DOWN) {
+				if(direction == GO_UP) {
+					posY += 20;
+					position = UP;
+				}else {
 					posY -= 20;
 					position = DOWN;
-				}else {
-					posY += 20;
-					position = MIDDLE;
 				}
+				
+				if(position == MIDDLE) {
+					if(direction == GO_DOWN) {
+						posY -= 20;
+						position = DOWN;
+					}else {
+						posY += 20;
+						position = MIDDLE;
+					}
+				}
+				
+			}else if(position == UP) {
+				posY -= 20;
+				position = MIDDLE;
+				direction = GO_DOWN;
+			}else {
+				posY += 20;
+				position = MIDDLE;
+				direction = GO_UP;
 			}
-			
-		}else if(position == UP) {
-			posY -= 20;
-			position = MIDDLE;
-			direction = GO_DOWN;
-		}else {
-			posY += 20;
-			position = MIDDLE;
-			direction = GO_UP;
 		}
+		
 	}
 	
 	//-------------------------------------
