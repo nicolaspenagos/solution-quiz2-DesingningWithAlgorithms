@@ -3,7 +3,7 @@ As a hobby, I present the solution to the test 2 of the course Designing With Al
 
 ## Made by
   <ul>
-  <li><div><a href="https://github.com/nicolaspenagos" title="Nicolas Penagos">Nicolás Penagos</a></div></li>
-    <li>nicolas.penagosm98@gmail.com</li>
+  <li><div><a href="https://github.com/nicolaspenagos" title="Nicolas Penagos">Nicolás Penagos</a>   </div></li>
   </ul> 
+  nicolas.penagosm98@gmail.com
 
